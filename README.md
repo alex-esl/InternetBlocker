@@ -1,11 +1,12 @@
 # InternetBlocker
 System tray app for enabling and disabling firewall rules. The "Block Internet In" and "Block Internet Out" rules must already be defined in windows firewall.
 
-Distributed using Nuitka
+Distributed using PyInstaller
 
 build with:
 ```
-python -m nuitka --windows-icon-from-ico=./internetblocker/assets/shortcut.ico internet_blocker.py
+pyinstaller --additional-hooks-dir=. --noconsole  internet_blocker.py
 ```
 
-TODO: hide netsh console windows, better distribution needed.
+TODO: hide netsh console windows, better distribution needed, pretty gross atm (Pyinstaller binary detected as trojan)
+

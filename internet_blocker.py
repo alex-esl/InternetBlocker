@@ -1,5 +1,10 @@
-from internetblocker import app
+from internetblocker.app import App
+
+
+def main():
+    app = App()
+    app.run()
+
 
 if __name__ == "__main__":
-    app = app.App()
-    app.run()
+    main()
