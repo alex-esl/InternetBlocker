@@ -1,2 +1,8 @@
 .idea
 InternetBlocker.iml
+startup.bat
+dist
+build
+internet_blocker.exe
+python39.dll
+internet_blocker.build
