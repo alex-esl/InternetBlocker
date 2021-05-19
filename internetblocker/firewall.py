@@ -1,7 +1,10 @@
 import subprocess
 
+
 RULE_IN = "Block Internet In"
 RULE_OUT = "Block Internet Out"
+
+
 # def check_admin():
 #     """ Force to start application with admin rights """
 #     try:
@@ -27,9 +30,8 @@ def toggle_rule(rule_name, toggle):
     toggle_arg = "yes" if toggle else "no"
     subprocess.run(
         ["netsh", "advfirewall", "firewall", "set", "rule", f"name={rule_name}", "new", f"enable={toggle_arg}"],
-        capture_output=True,
-        stdout=None,
-        stderr=None)
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL)
 
 
 def parse_check_output(output):

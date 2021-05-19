@@ -5,4 +5,7 @@ Distributed using Nuitka
 
 build with:
 ```
-python -m nuitka --windows-icon-from-ico=./internetblocker/assets/shortcut.ico --windows-disable-console internet_blocker.pyw
+python -m nuitka --windows-icon-from-ico=./internetblocker/assets/shortcut.ico internet_blocker.py
+```
+
+TODO: hide netsh console windows, better distribution needed.
