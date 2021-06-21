@@ -1,12 +1,12 @@
 import os
 import PIL.Image
 import pystray
-from . import firewall
+import firewall
 
 icon_path = os.path.abspath(os.path.split(__file__)[0])
-icon_stop = PIL.Image.open(os.path.join(icon_path, "assets", "stop.png"))
-icon_go = PIL.Image.open(os.path.join(icon_path, "assets", "go.png"))
-icon_error = PIL.Image.open(os.path.join(icon_path, "assets", "error.png"))
+icon_stop = PIL.Image.open(os.path.join(icon_path, "../assets", "stop.png"))
+icon_go = PIL.Image.open(os.path.join(icon_path, "../assets", "go.png"))
+icon_error = PIL.Image.open(os.path.join(icon_path, "../assets", "error.png"))
 
 
 class App(object):
@@ -15,7 +15,6 @@ class App(object):
                                  icon=icon_go,
                                  title="Internet Blocker",
                                  menu=self.default_menu)
-        print("init...")
 
     @property
     def default_menu(self):
@@ -29,8 +28,10 @@ class App(object):
 
     def run(self):
         self.icon.run()
+        self.unblock()
 
     def quit(self):
+        self.unblock()
         self.icon.stop()
 
     def block(self):
@@ -73,3 +74,8 @@ class App(object):
         self.icon.menu = menu
         self.icon.update_menu()
         self.icon.icon = icon_go
+
+
+if __name__ == "__main__":
+    app = App()
+    app.run()
