@@ -1,18 +1,13 @@
+"""
+Reads and edits Windows Firewall using netsh. May switch over to
+registry based changes to avoid excess console windows.
+"""
+
 import subprocess
 
 
 RULE_IN = "Block Internet In"
 RULE_OUT = "Block Internet Out"
-
-
-# def check_admin():
-#     """ Force to start application with admin rights """
-#     try:
-#         isAdmin = ctypes.windll.shell32.IsUserAnAdmin()
-#     except AttributeError:
-#         isAdmin = False
-#     if not isAdmin:
-#         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
 
 
 def rule_enabled(rule_name):

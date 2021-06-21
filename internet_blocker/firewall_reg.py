@@ -1,3 +1,8 @@
+"""
+Read and edit Windows firewall using the registry. Not finished yet.
+May not be a viable alternative to netsh.
+"""
+
 import winreg
 from winreg import *
 from contextlib import suppress
@@ -6,6 +11,7 @@ import itertools
 RULES_PATH = "SYSTEM\\CurrentControlSet\\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules"
 RULE_IN = "Block Internet In"
 RULE_OUT = "Block Internet Out"
+
 
 def check_for_rule(rule_name):
     try:

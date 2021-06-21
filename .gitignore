@@ -7,3 +7,5 @@ internet_blocker.exe
 python39.dll
 internet_blocker.build
 internet_blocker.spec
+__pycache__
+cx_dist

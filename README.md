@@ -1,12 +1,14 @@
 # InternetBlocker
-System tray app for enabling and disabling firewall rules. The "Block Internet In" and "Block Internet Out" rules must already be defined in windows firewall.
+System tray application for enabling and disabling firewall rules. The "Block Internet In" and "Block Internet Out" rules must already be defined in windows firewall.
 
-Distributed using PyInstaller
+Distributed using pynsist
 
 build with:
 ```
-pyinstaller --additional-hooks-dir=. --noconsole  internet_blocker.py
+pyinsist installer.cfg
 ```
 
-TODO: hide netsh console windows, better distribution needed, pretty gross atm (Pyinstaller binary detected as trojan)
+TODO:
+- create firewall rules automatically with user defined local network
+- switch from netsh to a less intrusive enable/disable mechanism (maybe registry)
 
